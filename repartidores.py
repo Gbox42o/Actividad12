@@ -52,5 +52,20 @@ def ingreso_repartidores():
 def mostrar_repartidores(repart):
     lista=list(repart.items())
     orden=quick_sort(lista)
-    print("\n ")
+    print("\n Ranking de repartidores. ")
+    for nombre, datos in orden:
+        print(f"{nombre} - {datos['paquetes']} paquetes- zona: {datos['zona']}")
+    return orden
+
+def busqueda_secu(repart)
+    buscar_nombre=input("\nBuscar repartidor: ").strip()
+    encontrado=False
+    for nombre in repart:
+        if nombre.lower()==buscar_nombre.lower():
+            datos=repart[nombre]
+            print(f"{nombre} entregó {datos['paquetes']} paquetes en la zona {datos['zona']}.")
+            encontrado = True
+            break
+        if not encontrado:
+            print("Repartidor no encontrado.")
 
